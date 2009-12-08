@@ -1,0 +1,13 @@
+Source: rarcrack
+Section: misc
+Priority: optional
+Maintainer: David Kedves <kedazo@gmail.com>
+Build-Depends: debhelper (>= 4.0.0), libglib2.0-dev (>= 2.2.0) 
+Standards-Version: 3.7.2
+
+Package: rarcrack
+Architecture: any
+Depends: ${Shlibs:Depends}
+Recommends: unzip, p7zip, unrar
+Description: RarCrack!
+  Password recovery tool for rar, zip and 7z archives

@@ -1,0 +1,28 @@
+2009-01-10  David Kedves <kedazo@gmail.com>
+
+	* Added debian/ subdir
+	* Added gentoo/ subdir
+	* Now you can easily install this package
+	  to gentoo and debian based systems
+	* Added Makefile.win
+
+2008-11-03  David Kedves <kedazo@gmail.com>
+
+	* Changed license to GPL3
+	* Dropped dependency libxml2, pthreads
+	* Added dependency glib2
+	* Changed status file format from xml to ini
+
+2007-10-26  David Kedves <kedazo@gmail.com>
+
+	Released 0.2
+	
+	* rarcrack.c: Added multiple cracking threads support
+	* rarcrack.h: Added 7z, zip support
+	* rarcrack.c: Archive file type auto-detection
+
+2006-08-23  David Kedves  <kedazo@gmail.com>
+
+	Released 0.1
+
+	* Inital version (rar cracking working)
