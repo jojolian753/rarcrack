@@ -2,8 +2,6 @@ DESTDIR=
 PREFIX=/usr/local
 DOCDIR=$(PREFIX)/share/doc/rarcrack
 DOCUMENTATION=ChangeLog README COPYING
-CFLAGS+=-Wall `pkg-config gthread-2.0 gobject-2.0 glib-2.0 --cflags`
-LDFLAGS+=`pkg-config gthread-2.0 gobject-2.0 glib-2.0 --libs`
 SOURCES=src/main.c src/rarcrack.c src/state.c \
         src/rarcrack.h src/state.h src/file.h \
 		src/file.c
@@ -46,4 +44,3 @@ dist:
 distclean: clean
 	-@rm -f rarcrack-0.3.tar.bz2
 
-	

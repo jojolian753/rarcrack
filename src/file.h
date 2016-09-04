@@ -1,8 +1,13 @@
-#ifndef _FILE_H
-#define _FILE_H
+#ifndef RARCRACK_FILE_H
+#define RARCRACK_FILE_H 1
+
+#include <string.h> /* for strncmp/strlen */
+#include <stdio.h>  /* for FILE */
+#include <stdlib.h> /* for system */
 
 #include <glib.h>
 #include <glib/gstdio.h> /* for g_fopen */
+
 
 enum {
     FILE_ERROR = 100, /* file not found / permission error */
@@ -26,4 +31,4 @@ typedef struct _types {
 } types;
 
                            
-#endif
+#endif // RARCRACK_FILE_H

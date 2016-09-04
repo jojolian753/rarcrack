@@ -15,15 +15,15 @@
  *
  *  You should have received a copy of the GNU General Public License
  *  along with rarcrack.  If not, see <http://www.gnu.org/licenses/>.
- *
  */
-
-#ifndef _STATE_H
-#define _STATE_H
+#ifndef RARCRACK_STATE_H
+#define RARCRACK_STATE_H 1
 
 #include "rarcrack.h"
+
 
 gboolean state_load(gchar*, params*);
 void state_save(gchar*, params*);
 
-#endif
+
+#endif // RARCRACK_STATE_H

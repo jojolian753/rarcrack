@@ -15,10 +15,9 @@
  *
  *  You should have received a copy of the GNU General Public License
  *  along with rarcrack.  If not, see <http://www.gnu.org/licenses/>.
- *
  */
-
 #include "rarcrack.h"
+
 
 /* TODO: on crack i need to use system() call, it's working on win/linux/macosx... 
  * eg.:
@@ -40,6 +39,7 @@
 char* ABC = (char*) &default_ABC;
 int ABCLEN;
 
+
 char password[PWD_LEN+1] = {'\0','\0'}; //this contains the actual password
 char password_good[PWD_LEN+1] = {'\0', '\0'};  //this changed only once, when we found the good passord
 unsigned int curr_len = 1; //current password length
@@ -52,12 +52,14 @@ int finished = 0;
 xmlMutexPtr finishedMutex;
 char finalcmd[300] = {'\0', '\0'}; //this depending on arhive file type, it's a command to test file with password
 
+
 char * getfirstpassword() {
 	static char ret[2];
 	ret[0] = ABC[0];
 	ret[1] = '\0';
 	return (char*) &ret;
 }
+
 
 inline void savestatus() {
 	xmlNodePtr root = NULL;
@@ -93,12 +95,14 @@ inline void savestatus() {
 	return;
 }
 
+
 inline int abcnumb(char a) {
   int i;
   for (i = 0; i<ABCLEN; i++) 
     if (ABC[i] == a) return i;
   return 0;
 }
+
 
 int loadstatus() {
 	xmlNodePtr root = NULL;
@@ -164,6 +168,7 @@ int loadstatus() {
 	return ret;
 }
 
+
 void nextpass2(char* p, unsigned int n) {
    int i;
    if (p[n] == ABC[ABCLEN-1]) {
@@ -182,6 +187,7 @@ void nextpass2(char* p, unsigned int n) {
    return;
 }
 
+
 inline char* nextpass() {	//IMPORTANT: the returned string must be freed
    char *ok = malloc(sizeof(char)*(PWD_LEN+1));
    xmlMutexLock(pwdMutex);
@@ -190,6 +196,7 @@ inline char* nextpass() {	//IMPORTANT: the returned string must be freed
    xmlMutexUnlock(pwdMutex);
    return ok;
 }
+
 
 void * status_thread() {
 	int pwds;
@@ -206,6 +213,7 @@ void * status_thread() {
 		sleep(status_sleep);
 	}
 }
+
 
 void * crack_thread() {
 	char * current;
@@ -240,6 +248,7 @@ void * crack_thread() {
 	}
 }
 
+
 void crack_start(unsigned int threads) {
 	pthread_t th[13];
 	unsigned int i;
@@ -253,6 +262,7 @@ void crack_start(unsigned int threads) {
 	(void) pthread_join(th[12], NULL);
 	return;
 }
+
 
 void init(int argc, char **argv) {
 	unsigned int i, j;
