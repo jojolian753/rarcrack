@@ -19,25 +19,25 @@ GPL-3 license.
 Software requirements
 -------------------------------------------------------------------------------
 
-    > glibc 2.4
-    any POSIX compatible operating system [sorry Window$ isn't]
-    pthreads
-    libxml2
-    and finally: 7zip, unrar, unzip
+- glibc>2.4,
+- POSIX compatible operating system [sorry Window$ isn't],
+- pthreads,
+- libxml2,
+- 7zip, unrar, unzip.
 
 
 -------------------------------------------------------------------------------
 Building and installing:
 -------------------------------------------------------------------------------
 
-Everything is very easy:
+Everything is very easy::
 
-	$ tar -xjf rarcrack-VERSION.tar.bz2
-	$ cd rarcrack-VERSION
-	// you need gcc or any C compiler (edit Makefile CC=YOUR_C_COMPILER)
-	$ make
-	// you must be root in next step:
-	$ make install
+    $ tar -xjf rarcrack-VERSION.tar.bz2
+    $ cd rarcrack-VERSION
+    // you need gcc or any C compiler (edit Makefile CC=YOUR_C_COMPILER)
+    $ make
+    // you must be root in next step:
+    $ make install
 
 
 -------------------------------------------------------------------------------
@@ -55,13 +55,14 @@ After the cracking started RarCrack will print the current status of cracking
 and save it's to a status file. If you want more specific password character
 set, you need to run RarCrack to create the XML status file (3 sec).
 
+::
 
-<?xml version="1.0" encoding="UTF-8"?>
-<rarcrack>
-    <abc>0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</abc>
-    <current>uU</current>
-    <good_password></good_password>
-</rarcrack>
+    <?xml version="1.0" encoding="UTF-8"?>
+    <rarcrack>
+        <abc>0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</abc>
+        <current>uU</current>
+        <good_password></good_password>
+    </rarcrack>
 
 
 This is a sample XML file, and you see there is a character set. If you want,
